@@ -4,5 +4,6 @@ iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
 dpkg -i /var/cache/apt/archives/*.deb
 apt install -f udhcpd
 
+udhcpd /etc/udhcpd.conf
 echo "nameserver 8.8.8.8" > /etc/resolv.conf
 
