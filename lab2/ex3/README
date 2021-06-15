@@ -21,3 +21,14 @@ and to properly set up the pc configurations.
 - the router has always 1 in the host part of its own address 
   even in its local-link address.
 
+
+Solution recap:
+
+1) configure interfaces (ip addr for r1)
+2) set up lab.conf in order to use temporary address and accept_ra
+3) configure dnsmasq -> to provide both Router Advertisement and DHCP info
+	/etc/dnsmasq.d/main.conf -> dhcp-range -> add "ra-names" (this option allows to use the IPv4 hostname in the IPv6 host list)
+	start dnsmansq in r1
+4) configure dibbler (/etc/dibbler/client.conf -> uncomment "stateless" and comment "ia")
+	NB: dibbler client is only for IPv6
+	Usage: dibbler-client stop/run/restart

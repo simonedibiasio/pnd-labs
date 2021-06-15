@@ -1,4 +1,6 @@
 umount /etc/resolv.conf
-#dpkg -i /shared/dibbler-client*.deb
-#apt install -y dibbler-client
+dpkg -i /shared/dibbler-client*.deb
+apt install -y dibbler-client
 
+dhclient # for IPv4
+dibbler-client start # for IPv6

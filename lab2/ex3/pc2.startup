@@ -1,1 +1,2 @@
 umount /etc/resolv.conf
+dhclient
